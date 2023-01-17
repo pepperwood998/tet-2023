@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css" type="text/css">
+  <link rel="stylesheet" href="css/fonts.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <section id="first">
+      <!-- <h2>Part 1</h2> -->
+      <div class="header">
+        <img src="images/full-moon-2.png" />
+      </div>
+      <div class="content">
+        <div class="banner-container">
+          <div class="happy">CHÚC MỪNG</div>
+          <div class="new-year">NĂM MỚI</div>
+        </div>
+        <div class="lucky-number-container">
+          <button class="lucky-number">
+            <h3 class="lucky-number-text">24</h3>
+            <div class="lucky-number-cover"></div>
+          </button>
+        </div>
+        <div class="cat-container">
+          <div class="cat-filler"></div>
+          <div class="cat-content"></div>
+        </div>
+      </div>
+    </section>
+    <section id="second">
+      <div class="quote-container">
+        <p>"An khang thịnh vượng. Vạn sự như ý."</p>
+      </div>
+      <div class="lock-container">
+        <div></div>
+        <div class="lock-board"></div>
+      </div>
+    </section>
+    <section id="third">
+      <h2>Part 3</h2>
+    </section>
+    <section id="fourth">
+      <h2>Part 4</h2>
+    </section>
+
+    <div class="dots-container">
+      <button class="dot active"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <!-- <script src="js/custom-scroll-snap.js"></script> -->
+  <script src="js/lucky-number.js"></script>
+  <script src="js/lock-quote.js"></script>
+  <script>
+    $(function () {
+      let dotButton = $(".dot");
+      let someArr = ["first", "second", "third", "fourth"];
+      let container = $(".container");
+      let sectionCurrentIndex = 0;
+      let activeDotIndex = 0;
+
+      function updateDots(activeDotIndex, targetDotIndex) {
+        $($(".dot")[activeDotIndex]).removeClass("active");
+        $($(".dot")[targetDotIndex]).addClass("active");
+        return targetDotIndex;
+      }
+
+      container.scroll(function (e) {
+        let targetIndex = parseInt(container.scrollTop() / container.height());
+        activeDotIndex = updateDots(activeDotIndex, targetIndex);
+      });
+
+      function scroll(index) {
+        if (index < 0 || index > someArr.length - 1) {
+          return;
+        }
+
+        canWheelScroll = false;
+        $("#" + someArr[index])[0].scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+
+      function switchToNext() {
+        var _this = $(this);
+
+        let index = _this.index();
+        scroll(index);
+      }
+
+      dotButton.click(switchToNext);
+    });
+  </script>
+</body>
+
+</html>

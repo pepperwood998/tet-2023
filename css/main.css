@@ -1,0 +1,181 @@
+:root {
+  font-size: 16px;
+  font-family: 'RobotoCondensed';
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+}
+
+.container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.container section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.container section#first {
+  background-image: linear-gradient(315deg, #FA4945 25%, #f40c31 75%);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#first .header {
+  height: 75px;
+  text-align: center;
+  padding: 0.5rem 0;
+  box-shadow: 0px 2px 10px -2px #f9001978;
+}
+
+#first .header img {
+  height: 100%;
+}
+
+#first .content {
+  padding: 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#first .banner-container {
+  padding: 0 1.5rem;
+}
+
+#first .content .happy {
+  font-size: 3rem;
+  /* font-weight: bold; */
+}
+
+#first .content .new-year {
+  font-size: 2rem;
+  /* font-weight: bold; */
+  color: #ffebb3;
+  padding: 0.5rem 0;
+}
+
+#first .content .lucky-number-container {
+  height: 9rem;
+  margin-top: 4rem;
+  position: relative
+}
+
+#first .content .lucky-number,
+#first .content .lucky-number-cover {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+  border-radius: 50%;
+}
+
+#first .content .lucky-number {
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 2rem;
+  transition: transform 0.2s ease;
+}
+
+#first .content .lucky-number.randomizing {
+  transform: scale(0.8);
+}
+
+#first .content .lucky-number.randomizing .lucky-number-cover {
+  opacity: 1;
+}
+
+#first .content .lucky-number-cover {
+  background: url("../images/spin-wheel-3.png") no-repeat right bottom;
+  background-size: contain;
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+#first .content .cat-container {
+  flex: 1;
+  display: flex;
+}
+
+#first .content .cat-container .cat-filler {
+  flex: 1;
+}
+
+#first .content .cat-container .cat-content {
+  flex: 3;
+  background: url("../images/cat-6.png") no-repeat right bottom;
+  background-size: contain;
+  padding-right: 1rem;
+  background-origin: content-box, padding-box;
+}
+
+.container section#second {
+  background-image: linear-gradient(145deg, #FA4945 25%, #f40c31 75%);
+  padding: 5rem 0;
+}
+
+#second .quote-container {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  font-style: italic;
+  padding: 0 1.5rem;
+}
+
+#second .lock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 0;
+}
+
+.container section#third {
+  background-color: rgb(38, 38, 38);
+  color: green;
+}
+
+.container section#fourth {
+  background-color: rgb(48, 48, 48);
+  color: green;
+}
+
+.dots-container {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dots-container .dot {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  transition: 0.3s ease height;
+  opacity: 0.7;
+}
+
+.dots-container .dot.active {
+  height: 45px;
+  cursor: auto;
+  opacity: 1;
+}
