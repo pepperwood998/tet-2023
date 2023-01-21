@@ -17,8 +17,8 @@ const QUIZS = [
     order: [1, 5, 3, 6, 8, 9]
   },
   {
-    quote: "Chúc Tết đến trăm điều như ý - Mừng xuân sang vạn sự thành công.",
-    order: [7, 4, 1, 5, 3, 6, 9]
+    quote: "Tống cựu nghênh tân - Vạn sự cát tường - Toàn gia hạnh phúc.",
+    order: [1, 6, 2, 4, 8, 3]
   }
 ];
 const WRONG_FEEDBACK = "Xin hãy thử lại!";
