@@ -270,9 +270,9 @@ $(function () {
   }
 
   function PlayWrongAnim() {
-    lockFeedback.removeClass("wrong");
-    void lockFeedback.width();
+    // lockFeedback.removeClass("wrong");
+    // void lockFeedback.width();
 
-    lockFeedback.addClass("wrong");
+    // lockFeedback.addClass("wrong");
   }
 });
