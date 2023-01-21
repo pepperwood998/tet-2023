@@ -13,6 +13,8 @@ const SpinStateNone = "None";
 const SpinStateAccel = "Accel";
 const SpinStateDecel = "Decel";
 
+const MAX_RANDOM = 45;
+
 $(function () {
   let luckyNumber = $(".lucky-number");
   let luckyNumberText = $(".lucky-number-text");
@@ -40,7 +42,7 @@ $(function () {
     if (needCover) {
       clearTimeout(randomTimeout);
       randomTimeout = setTimeout(function () {
-        luckyNumberText.text(Math.ceil(Math.random() * 10));
+        luckyNumberText.text(Math.floor(Math.random() * MAX_RANDOM) + 1);
       }, 500);
     }
     else {
